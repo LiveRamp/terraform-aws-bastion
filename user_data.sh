@@ -14,7 +14,8 @@ chmod -R 770 /var/log/bastion
 setfacl -Rdm other:0 /var/log/bastion
 
 # Make OpenSSH execute a custom script on logins
-echo -e "\\nForceCommand /usr/bin/bastion/shell" >> /etc/ssh/sshd_config
+# echo -e "\\nForceCommand sudo /usr/bin/bastion/shell" >> /etc/ssh/sshd_config
+awk '!/ForceCommand/' /etc/ssh/sshd_config > temp && mv temp /etc/ssh/sshd_config
 
 # Block some SSH features that bastion host users could use to circumvent the solution
 awk '!/X11Forwarding/' /etc/ssh/sshd_config > temp && mv temp /etc/ssh/sshd_config
