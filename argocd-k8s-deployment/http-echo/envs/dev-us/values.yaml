@@ -1,0 +1,28 @@
+argocdK8sClusterName: eng-ops-mttn-dev-uscentral1-mttn-internal-dev-01
+argocdSlackChannel: oncall-ops-nonprod
+environment: dev
+namespaceOverride: ops-app-echo-argodevhabu
+argocdImgUpdIgnoreTags: (latest|^pr-.*$)
+argocdPrImagePrefix: "pr-"
+prDeploymentNamespace: ""
+appName: http-echo
+chartRepo: gs://charts-liveramp-net/infra/stable
+chartName: generic-service
+chartVersion: 2.7.3
+labels:
+  team: ops
+image:
+  repository: ghcr.io/mendhak/http-https-echo
+  tag: latest
+  imagePullPolicy: IfNotPresent
+deployment:
+  name: http-echo
+  enabled: true
+  replicas: 2
+  resources:
+    limits:
+      memory: 200Mi
+      cpu: 100m
+    requests:
+      memory: 100Mi
+      cpu: 100m
