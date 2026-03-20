@@ -3,7 +3,7 @@ argocdSlackChannel: oncall-ops-nonprod
 environment: dev
 namespaceOverride: ops-app-echo-argodevhabu
 argocdImgUpdIgnoreTags: (latest|^pr-.*$)
-argocdPrImagePrefix: "pr-"
+argocdPrImagePrefix: pr-
 prDeploymentNamespace: ""
 appName: http-echo
 chartRepo: gs://charts-liveramp-net/infra/stable
@@ -13,7 +13,7 @@ labels:
   team: ops
 image:
   repository: ghcr.io/mendhak/http-https-echo
-  tag: latest
+  tag: "40"
   imagePullPolicy: IfNotPresent
 deployment:
   name: http-echo
