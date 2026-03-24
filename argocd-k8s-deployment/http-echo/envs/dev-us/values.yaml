@@ -13,7 +13,7 @@ labels:
   team: ops
 image:
   repository: ghcr.io/mendhak/http-https-echo
-  tag: "40"
+  tag: latest
   imagePullPolicy: IfNotPresent
 deployment:
   name: http-echo
