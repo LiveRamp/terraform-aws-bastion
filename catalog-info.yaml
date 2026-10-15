@@ -1,0 +1,12 @@
+# BEGIN TERRAFORM MANAGED BLOCK
+"apiVersion": "backstage.io/v1alpha1"
+"kind": "Location"
+"metadata":
+  "annotations":
+    "github.com/project-slug": "LiveRamp/terraform-aws-bastion"
+    "github.com/team-slug": "LiveRamp/habu-infra-admin"
+  "description": "Terraform module which creates SSH bastion infrastructure on AWS"
+  "name": "terraform-aws-bastion"
+  "tags": []
+"spec": {}
+# END TERRAFORM MANAGED BLOCK
